@@ -1,7 +1,9 @@
 package com.example.personalpage
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Button
 import androidx.appcompat.widget.Toolbar
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
@@ -18,5 +20,11 @@ class MainActivity : AppCompatActivity() {
         bottomNavigation = findViewById(R.id.bottom_nav)
 
         setSupportActionBar(appBarNavigation)
+
+        val shareButton: Button = findViewById(R.id.share_button)
+        shareButton.setOnClickListener {
+            val intent = Intent(this, ResultActivity::class.java)
+            startActivity(intent)
+        }
     }
 }
